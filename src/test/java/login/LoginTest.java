@@ -1,6 +1,7 @@
 package login;
 
 import base.BaseTest;
+import com.applitools.eyes.Eyes;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,9 +13,11 @@ import pages.TermsAndConditionsPage;
  */
 public class LoginTest extends BaseTest {
 
+    private Eyes eyes;
+
     @Before
     public void SetUp() throws Exception {
-        // We do 'set up' things here, but we don't have much to set up since we have outside classes doing that for us
+        eyes = eyesProvider.openEyes("VDB Web", "Login Test");
     }
 
     @After
@@ -26,8 +29,9 @@ public class LoginTest extends BaseTest {
     public void LoginTest() {
         wait.until(ExpectedConditions.visibilityOf(loginPage.getSigninButton()));
         TermsAndConditionsPage termsAndConditionsPage = loginPage.login();
-
-
+        eyes.checkWindow("Terms & Conditions Page");
+        termsAndConditionsPage.getAcceptTermsButton().click();
+        eyes.checkWindow("VDB Main Search Page");
     }
 
 }

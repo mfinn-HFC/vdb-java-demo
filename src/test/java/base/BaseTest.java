@@ -6,6 +6,8 @@ import pages.LoginPage;
 import util.DriverUtil;
 import util.EyesProvider;
 
+import java.net.MalformedURLException;
+
 /**
  * Created by matt-hfc on 10/13/16.
  * This is a basic outline that contains variables that all tests will need. So each test should inherit from this class
@@ -21,9 +23,14 @@ public class BaseTest {
     public BaseTest() {
         // In the constructor, we activate the driver so we have a browser, then we can create our LoginPage, which needs
         // an active driver to be created
-        driver = new DriverUtil().localFireFoxDriver();
+        try {
+            driver = new DriverUtil().remoteFireFoxDriver();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
         wait = new WebDriverWait(driver, 30);
-        //eyesProvider = new EyesProvider(driver, "");
+        eyesProvider = new EyesProvider(driver);
         loginPage = new LoginPage(driver);
     }
 }

@@ -2,13 +2,13 @@ package util;
 
 import enums.URLS;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.rmi.Remote;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class DriverUtil {
 
-    public WebDriver driver;
+    public RemoteWebDriver driver;
 
     public WebDriver localFireFoxDriver() {
         driver = new FirefoxDriver();
@@ -29,11 +29,15 @@ public class DriverUtil {
         return driver;
     }
 
-    public WebDriver remoteChromeDriver() throws MalformedURLException {
-        DesiredCapabilities caps = DesiredCapabilities.chrome();
-        caps.setCapability("platform", "OS X 10.10");
-        caps.setCapability("version", "44.0");
+    public RemoteWebDriver remoteFireFoxDriver() throws MalformedURLException {
+        DesiredCapabilities caps = DesiredCapabilities.firefox();
+        caps.setCapability("platform", "Windows 8");
+        caps.setCapability("version", "34.0");
         driver = new RemoteWebDriver(new URL("http://mfinn-HFC:40f53ef4-bb29-4dfb-b08f-d405f0350d85@ondemand.saucelabs.com:80/wd/hub"), caps);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        // We normally wouldn't do this, but since we know this code is currently only for VDB, we can always go straight
+        // to the login page on stage for now
+        driver.get(URLS.BASE_STAGING.getString());
         return driver;
     }
 }

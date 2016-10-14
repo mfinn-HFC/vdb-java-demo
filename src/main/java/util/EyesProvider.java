@@ -12,13 +12,11 @@ public class EyesProvider {
 
     private WebDriver driver;
     private Eyes eyes;
-    private URI eyesServer;
     // We will need to move this API key. This is bad practice, since we don't want anyone having access to our API Key.
     private String apiKey = "pO97uSsUD6bcG8eFGthg2clPetD6xVsrhxTfrlseCgU110";
 
-    public EyesProvider(WebDriver driver, URI eyesServer) {
+    public EyesProvider(WebDriver driver) {
         this.driver = driver;
-        this.eyesServer = eyesServer;
     }
 
     private Eyes getEyes() {
@@ -28,7 +26,7 @@ public class EyesProvider {
 
     public Eyes openEyes(String appName, String testName) {
         eyes = getEyes();
-
+        eyes.setApiKey(apiKey);
         eyes.open(driver, appName, testName);
         return eyes;
     }

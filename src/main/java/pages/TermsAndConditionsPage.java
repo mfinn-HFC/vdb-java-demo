@@ -11,18 +11,20 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class TermsAndConditionsPage extends BasePage {
 
-    @FindBy(id = "web_user_email")
-    WebElement emailField;
-
-    @FindBy(id = "web_user_password")
-    WebElement passwordField;
-
-    @FindBy(name = "commit")
-    WebElement signinButton;
+    private final String acceptTermsButtonId = "accept_terms_link";
+    @FindBy(id = acceptTermsButtonId)
+    private WebElement acceptTermsButton;
 
     public TermsAndConditionsPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
+    public String getAcceptTermsButtonId() {
+        return acceptTermsButtonId;
+    }
+
+    public WebElement getAcceptTermsButton() {
+        return acceptTermsButton;
+    }
 }
