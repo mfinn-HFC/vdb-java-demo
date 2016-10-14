@@ -1,7 +1,10 @@
+package base;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.LoginPage;
 import util.DriverUtil;
+import util.EyesProvider;
 
 /**
  * Created by matt-hfc on 10/13/16.
@@ -12,6 +15,7 @@ public class BaseTest {
     protected WebDriver driver;
     protected LoginPage loginPage;
     protected WebDriverWait wait;
+    protected EyesProvider eyesProvider;
 
 
     public BaseTest() {
@@ -19,6 +23,7 @@ public class BaseTest {
         // an active driver to be created
         driver = new DriverUtil().localFireFoxDriver();
         wait = new WebDriverWait(driver, 30);
+        //eyesProvider = new EyesProvider(driver, "");
         loginPage = new LoginPage(driver);
     }
 }

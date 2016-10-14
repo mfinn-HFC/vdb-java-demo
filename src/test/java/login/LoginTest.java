@@ -1,13 +1,11 @@
+package login;
+
+import base.BaseTest;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.LoginPage;
 import pages.TermsAndConditionsPage;
-
-import static junit.framework.Assert.assertEquals;
 
 /**
  * Created by matthewfinnegan on 10/29/15.
@@ -28,6 +26,7 @@ public class LoginTest extends BaseTest {
     public void LoginTest() {
         wait.until(ExpectedConditions.visibilityOf(loginPage.getSigninButton()));
         TermsAndConditionsPage termsAndConditionsPage = loginPage.login();
+
 
     }
 
