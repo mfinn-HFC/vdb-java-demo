@@ -33,11 +33,10 @@ public class DriverUtil {
         DesiredCapabilities caps = DesiredCapabilities.firefox();
         caps.setCapability("platform", "Windows 8");
         caps.setCapability("version", "34.0");
-        driver = new RemoteWebDriver(new URL("http://mfinn-HFC:40f53ef4-bb29-4dfb-b08f-d405f0350d85@ondemand.saucelabs.com:80/wd/hub"), caps);
+        driver = new RemoteWebDriver(new URL("http://hfc-vdb:1c9f6abc-9cfc-43ed-a654-50eea9fbd8ce@ondemand.saucelabs.com:80/wd/hub"), caps);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         // We normally wouldn't do this, but since we know this code is currently only for VDB, we can always go straight
         // to the login page on stage for now
-        driver.get(URLS.BASE_STAGING.getString());
         return driver;
     }
 }
