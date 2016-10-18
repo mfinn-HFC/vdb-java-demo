@@ -20,7 +20,7 @@ public class LoginPage extends BasePage {
     private WebElement signinButton;
 
     @FindBy(xpath = "/html/body/div[5]/div/div[2]/div/div[2]/a")
-    private WebElement signupButton
+    private WebElement signupButton;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
