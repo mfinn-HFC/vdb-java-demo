@@ -1,5 +1,6 @@
 package util;
 
+import com.applitools.eyes.BatchInfo;
 import com.applitools.eyes.Eyes;
 import org.openqa.selenium.WebDriver;
 
@@ -27,6 +28,7 @@ public class EyesProvider {
     public Eyes openEyes(String appName, String testName) {
         eyes = getEyes();
         eyes.setApiKey(apiKey);
+        eyes.setBatch(new BatchInfo("Login"));
         eyes.open(driver, appName, testName);
         return eyes;
     }

@@ -16,7 +16,7 @@ public class LoginPage extends BasePage {
     @FindBy(id = "web_user_password")
     private WebElement passwordField;
 
-    @FindBy(name = "commit")
+    @FindBy(name = "commit") // Test
     private WebElement signinButton;
 
     public LoginPage(WebDriver driver) {
