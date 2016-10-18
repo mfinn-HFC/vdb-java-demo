@@ -19,6 +19,9 @@ public class LoginPage extends BasePage {
     @FindBy(name = "commit") // Test
     private WebElement signinButton;
 
+    @FindBy(xpath = "/html/body/div[5]/div/div[2]/div/div[2]/a")
+    private WebElement signupButton;
+
     public LoginPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -35,6 +38,8 @@ public class LoginPage extends BasePage {
     public WebElement getSigninButton() {
         return signinButton;
     }
+
+    public WebElement getSignupButton() {return signupButton; }
 
     // This method is to log in with the default credentials provided
     public TermsAndConditionsPage login() {
