@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 public class SignUpPage extends BasePage{
 
     /* generate a new email every time */
-    private final String email;
+    private final String email = "qa@happyfuncorp.com";
     private final String password = "Happiness4u";
 
     @FindBy(id = "web_user_name")
@@ -94,6 +94,14 @@ public class SignUpPage extends BasePage{
 
     public WebElement getSignUpButton() {
         return signUpButton;
+    }
+
+    public void sign_up() {
+        emailField.sendKeys(email);
+        passwordField.sendKeys(password);
+        signUpButton.click();
+        // By return this page, we don't have to add extra lines to 'create' an instance of this page class
+        return;
     }
 
 }
