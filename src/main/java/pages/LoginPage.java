@@ -19,7 +19,8 @@ public class LoginPage extends BasePage {
     @FindBy(name = "commit") // Test
     private WebElement signinButton;
 
-    @FindBy(xpath = "/html/body/div[5]/div/div[2]/div/div[2]/a")
+    //there is a problem here
+    @FindBy(css = "a[href='/web/users/sign_up']" )
     private WebElement signupButton;
 
     public LoginPage(WebDriver driver) {
