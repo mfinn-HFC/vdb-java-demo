@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.LoginPage;
-import util.DriverUtil;
+import util.DriverFactory;
 import util.EyesProvider;
 
 import java.net.MalformedURLException;
@@ -24,12 +24,11 @@ public class ApplitoolsBaseTest {
     protected EyesProvider eyesProvider;
     protected Eyes eyes;
 
-
     public ApplitoolsBaseTest() {
         // In the constructor, we activate the driver so we have a browser, then we can create our LoginPage, which needs
         // an active driver to be created
         try {
-            driver = new DriverUtil().remoteFireFoxDriver();
+            driver = new DriverFactory().remoteFireFoxDriver();
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
