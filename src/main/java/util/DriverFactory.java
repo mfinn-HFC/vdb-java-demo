@@ -30,9 +30,9 @@ public class DriverFactory {
     }
 
     public RemoteWebDriver remoteFireFoxDriver() throws MalformedURLException {
-        DesiredCapabilities caps = DesiredCapabilities.firefox();
-        caps.setCapability("platform", "Windows 8");
-        caps.setCapability("version", "34.0");
+        DesiredCapabilities caps = DesiredCapabilities.chrome();
+        caps.setCapability("platform", "Windows 10");
+        caps.setCapability("version", "53.0");
         // This will need to be replaced by something that either dynamically sets the test name PRIOR or AFTER
         // test execution. After may be easier, in my experience - Matt F
         caps.setCapability("name", "Login Test Demo");
