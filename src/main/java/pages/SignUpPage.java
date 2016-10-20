@@ -4,14 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import models.*;
 /**
  * Created by leahgarber on 10/17/16.
  */
 public class SignUpPage extends BasePage{
-
-    /* generate a new email every time */
-    private final String email = "qa@happyfuncorp.com";
-    private final String password = "Happiness4u";
 
     @FindBy(id = "web_user_name")
     private WebElement nameField;
@@ -96,11 +93,22 @@ public class SignUpPage extends BasePage{
         return signUpButton;
     }
 
-    public void sign_up() {
-        emailField.sendKeys(email);
-        passwordField.sendKeys(password);
+    public void sign_up(User user) {
+        nameField.sendKeys(user.name);
+        companyField.sendKeys(user.company);
+        phoneNumberField.sendKeys(user.phone_number);
+        streetAddressField.sendKeys(user.street_address);
+        cityField.sendKeys(user.city);
+        countryField.sendKeys(user.country);
+
+        emailField.sendKeys(user.email);
+        emailConfirmationField.sendKeys(user.email_confirmation);
+
+        passwordField.sendKeys(user.password);
+        passwordField.sendKeys(user.password_confirmation);
+
         signUpButton.click();
-        // By return this page, we don't have to add extra lines to 'create' an instance of this page class
+
         return;
     }
 
