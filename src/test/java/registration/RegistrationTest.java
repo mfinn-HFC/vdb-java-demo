@@ -26,9 +26,11 @@ public class RegistrationTest extends ApplitoolsBaseTest {
         //sign up with all required fields filled in
         LoginUtil loginutil = new LoginUtil();
         String email = loginutil.generateEmail();
-        User new_user = new User("John Snow", "HFC", "80 John St", "9993334242","New York", "USA", email, "Happiness4u");
-        signupPage.sign_up(new_user);
+        User newUser = new User("John Snow", "HFC", "80 John St", "9993334242","New York", "USA", email, "Happiness4u");
+        signupPage.signUp(newUser);
 
+
+        wait.until(ExpectedConditions.visibilityOf(loginPage.getSigninButton()));
         eyes.checkWindow("Thank You page");
     }
 }

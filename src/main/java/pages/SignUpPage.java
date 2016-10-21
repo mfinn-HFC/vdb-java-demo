@@ -93,19 +93,19 @@ public class SignUpPage extends BasePage{
         return signUpButton;
     }
 
-    public void sign_up(User user) {
-        nameField.sendKeys(user.name);
-        companyField.sendKeys(user.company);
-        phoneNumberField.sendKeys(user.phone_number);
-        streetAddressField.sendKeys(user.street_address);
-        cityField.sendKeys(user.city);
-        countryField.sendKeys(user.country);
+    public void signUp(User user) {
+        nameField.sendKeys(user.getName());
+        companyField.sendKeys(user.getCompany());
+        phoneNumberField.sendKeys(user.getPhoneNumber());
+        streetAddressField.sendKeys(user.getStreetAddress());
+        cityField.sendKeys(user.getCity());
+        countryField.sendKeys(user.getCountry());
 
-        emailField.sendKeys(user.email);
-        emailConfirmationField.sendKeys(user.email_confirmation);
+        emailField.sendKeys(user.getEmail());
+        emailConfirmationField.sendKeys(user.getEmailConfirmation());
 
-        passwordField.sendKeys(user.password);
-        passwordField.sendKeys(user.password_confirmation);
+        passwordField.sendKeys(user.getPassword());
+        passwordField.sendKeys(user.getPasswordConfirmation());
 
         signUpButton.click();
 

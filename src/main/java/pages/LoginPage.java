@@ -20,7 +20,7 @@ public class LoginPage extends BasePage {
     private WebElement signinButton;
 
     //there is a problem here
-    @FindBy(css = "a[href='/web/users/sign_up']" )
+    @FindBy(css = "a[href='/web/users/signUp']" )
     private WebElement signupButton;
 
     public LoginPage(WebDriver driver) {
