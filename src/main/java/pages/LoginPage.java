@@ -19,8 +19,7 @@ public class LoginPage extends BasePage {
     @FindBy(name = "commit") // Test
     private WebElement signinButton;
 
-    //there is a problem here
-    @FindBy(css = "a[href='/web/users/signUp']" )
+    @FindBy(id = "signup_link" )
     private WebElement signupButton;
 
     public LoginPage(WebDriver driver) {
