@@ -1,5 +1,10 @@
 package registration;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import models.*;
 import base.ApplitoolsBaseTest;
 import org.junit.Test;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -27,8 +32,11 @@ public class RegistrationTest extends ApplitoolsBaseTest {
         LoginUtil loginutil = new LoginUtil();
         String email = loginutil.generateEmail();
         User newUser = new User("John Snow", "HFC", "80 John St", "9993334242","New York", "USA", email, "Happiness4u");
-        signupPage.signUp(newUser);
 
+        WebElement element = signupPage.getSignUpButton();
+        jse.executeScript("arguments[0].scrollIntoView(true);", element);
+
+        signupPage.signUp(newUser);
 
         wait.until(ExpectedConditions.visibilityOf(loginPage.getSigninButton()));
         eyes.checkWindow("Thank You page");

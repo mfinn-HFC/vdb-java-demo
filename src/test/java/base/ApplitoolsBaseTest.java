@@ -4,6 +4,7 @@ import com.applitools.eyes.Eyes;
 import enums.URLS;
 import org.junit.After;
 import org.junit.Before;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.LoginPage;
@@ -21,6 +22,7 @@ public class ApplitoolsBaseTest {
     protected WebDriver driver;
     protected LoginPage loginPage;
     protected WebDriverWait wait;
+    protected JavascriptExecutor jse;
     protected EyesProvider eyesProvider;
     protected Eyes eyes;
 
@@ -35,6 +37,7 @@ public class ApplitoolsBaseTest {
 
         wait = new WebDriverWait(driver, 30);
         eyesProvider = new EyesProvider(driver);
+        JavascriptExecutor jse = ( (JavascriptExecutor) driver);
         loginPage = new LoginPage(driver);
     }
 
