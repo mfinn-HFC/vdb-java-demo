@@ -37,7 +37,7 @@ public class ApplitoolsBaseTest {
 
         wait = new WebDriverWait(driver, 30);
         eyesProvider = new EyesProvider(driver);
-        JavascriptExecutor jse = ( (JavascriptExecutor) driver);
+        jse = ( (JavascriptExecutor) driver);
         loginPage = new LoginPage(driver);
     }
 
