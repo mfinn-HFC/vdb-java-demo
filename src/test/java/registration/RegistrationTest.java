@@ -33,8 +33,6 @@ public class RegistrationTest extends ApplitoolsBaseTest {
         String email = loginutil.generateEmail();
         User newUser = new User("John Snow", "HFC", "80 John St", "9993334242","New York", "USA", email, "Happiness4u");
 
-        jse.executeScript("$('input[name=commit]')[0].scrollIntoView(true)");
-
         signupPage.signUp(newUser);
 
         wait.until(ExpectedConditions.visibilityOf(loginPage.getSigninButton()));

@@ -105,7 +105,7 @@ public class SignUpPage extends BasePage{
         emailConfirmationField.sendKeys(user.getEmailConfirmation());
 
         passwordField.sendKeys(user.getPassword());
-        passwordField.sendKeys(user.getPasswordConfirmation());
+        passwordConfirmationField.sendKeys(user.getPasswordConfirmation());
 
         signUpButton.click();
 
