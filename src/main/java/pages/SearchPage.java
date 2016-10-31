@@ -83,7 +83,7 @@ public class SearchPage extends BasePage {
 
     public void selectOptionWithText(String textToSelect) {
         try {
-            WebElement autoOptions = driver.findElement(id = "ui-id-1"));
+            WebElement autoOptions = driver.findElement(By.id("ui-id-1"));
             wait.until(ExpectedConditions.visibilityOf(autoOptions));
 
             List<WebElement> optionsToSelect = autoOptions.findElements(By.tagName("li"));
