@@ -73,6 +73,9 @@ public class SearchPage extends BasePage {
         return supplierField;
     }
 
+    public void defaultSearch() {
+        searchButton.click();
+    }
 
     public void supplierSearch() {
         supplierButton.click();
