@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
  * Created by leahgarber on 10/31/16.
@@ -80,11 +79,11 @@ public class SearchPage extends BasePage {
     public void supplierSearch() {
         supplierButton.click();
         supplierField.sendKeys("Leah Company 2");
-        selectOptionWithText("Leah Company 2");
+        /* selectOptionWithText("Leah Company 2"); */
         searchButton.click();
     }
 
-    public void selectOptionWithText(String textToSelect) {
+    /* public void selectOptionWithText(String textToSelect) {
         try {
             WebElement autoOptions = driver.findElement(By.id("ui-id-1"));
             wait.until(ExpectedConditions.visibilityOf(autoOptions));
@@ -104,5 +103,5 @@ public class SearchPage extends BasePage {
         catch (Exception e) {
             System.out.println(e.getStackTrace());
         }
-    }
+    } */
 }

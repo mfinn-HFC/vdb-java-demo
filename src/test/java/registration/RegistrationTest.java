@@ -10,7 +10,6 @@ import org.junit.Test;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.SignUpPage;
 import util.LoginUtil;
-import models.*;
 
 /**
  * Created by leahgarber on 10/20/16.

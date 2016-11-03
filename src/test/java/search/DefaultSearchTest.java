@@ -12,20 +12,20 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.SignUpPage;
 import util.LoginUtil;
 /**
- * Created by leahgarber on 10/31/16.
+ * Created by leahgarber on 11/3/16.
  */
-public class supplierSearchTest extends ApplitoolsBaseTest {
+public class DefaultSearchTest extends ApplitoolsBaseTest {
 
     @Test
-    public void supplierSearchTest() {
-        /* sign in, get to the search page */
-
-        /* confirm you are on search page */
-        SearchPage searchPage = new SearchPage(driver);
+    public void DefaultSearchTest() {
+         /* confirm you are on search page */
         wait.until(ExpectedConditions.visibilityOf(searchPage.getSearchButton()));
         eyes.checkWindow("Search Page");
 
-        /* run supplierSearch method from the Search Page */
-
+        /* run default search method from the Search Page. Check results on results page */
+        searchPage.defaultSearch();
+        /* wait.until(ExpectedConditions.visibilityOf( )); */
+        eyes.checkWindow("Default search results");
     }
+
 }

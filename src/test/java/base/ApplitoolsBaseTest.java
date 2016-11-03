@@ -8,6 +8,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.LoginPage;
+import pages.SearchPage;
 import util.DriverFactory;
 import util.EyesProvider;
 
@@ -21,6 +22,7 @@ public class ApplitoolsBaseTest {
 
     protected WebDriver driver;
     protected LoginPage loginPage;
+    protected SearchPage searchPage;
     protected WebDriverWait wait;
     protected JavascriptExecutor jse;
     protected EyesProvider eyesProvider;
@@ -39,6 +41,7 @@ public class ApplitoolsBaseTest {
         eyesProvider = new EyesProvider(driver);
         jse = ( (JavascriptExecutor) driver);
         loginPage = new LoginPage(driver);
+        searchPage = new SearchPage(driver);
     }
 
     @Before
