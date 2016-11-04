@@ -18,13 +18,17 @@ public class DefaultSearchTest extends ApplitoolsBaseTest {
 
     @Test
     public void DefaultSearchTest() {
+        loginPage.login();
+
          /* confirm you are on search page */
         wait.until(ExpectedConditions.visibilityOf(searchPage.getSearchButton()));
         eyes.checkWindow("Search Page");
 
         /* run default search method from the Search Page. Check results on results page */
         searchPage.defaultSearch();
-        /* wait.until(ExpectedConditions.visibilityOf( )); */
+
+        /* confirm you're on the results page */
+        wait.until(ExpectedConditions.visibilityOf(searchResultsPage.getSearchResultsHeaderText()));
         eyes.checkWindow("Default search results");
     }
 
