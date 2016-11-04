@@ -36,6 +36,11 @@ public class SearchPage extends BasePage {
     @FindBy(id = "supplier_auto_complete")
     private WebElement supplierField;
 
+    public SearchPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+
     public WebElement getHamburgerMenuButton() {
         return hamburgerMenuButton;
     }
