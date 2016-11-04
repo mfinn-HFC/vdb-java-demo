@@ -36,7 +36,7 @@ public class DriverFactory {
         // This will need to be replaced by something that either dynamically sets the test name PRIOR or AFTER
         // test execution. After may be easier, in my experience - Matt F
         caps.setCapability("name", "Login Test Demo");
-        driver = new RemoteWebDriver(new URL("http://hfc-vdb:1c9f6abc-9cfc-43ed-a654-50eea9fbd8ce@ondemand.saucelabs.com:80/wd/hub"), caps);
+        driver = new RemoteWebDriver(new URL("http://hfc-automation:7c5331f5-c08e-401f-8609-a493bd59897c@ondemand.saucelabs.com:80/wd/hub"), caps);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         // We normally wouldn't do this, but since we know this code is currently only for VDB, we can always go straight
         // to the login page on stage for now

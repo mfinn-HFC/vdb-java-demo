@@ -1,5 +1,6 @@
 package search;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,14 +23,14 @@ public class DefaultSearchTest extends ApplitoolsBaseTest {
 
          /* confirm you are on search page */
         wait.until(ExpectedConditions.visibilityOf(searchPage.getSearchButton()));
-        eyes.checkWindow("Search Page");
 
         /* run default search method from the Search Page. Check results on results page */
         searchPage.defaultSearch();
 
         /* confirm you're on the results page */
         wait.until(ExpectedConditions.visibilityOf(searchResultsPage.getSearchResultsHeaderText()));
-        eyes.checkWindow("Default search results");
+        assert driver.findElements(By.cssSelector(".image-cover.image-downloaded")).size() > 0;
+
     }
 
 }
