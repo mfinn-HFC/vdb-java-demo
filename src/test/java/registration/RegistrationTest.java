@@ -2,6 +2,7 @@ package registration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import models.*;
@@ -17,8 +18,8 @@ import util.LoginUtil;
 public class RegistrationTest extends ApplitoolsBaseTest {
 
     @Test
-    public void RegistrationTest() {
-
+    public void RegistrationTest(RemoteWebDriver driver) {
+        setUp(driver);
         wait.until(ExpectedConditions.visibilityOf(loginPage.getSignupButton()));
         loginPage.getSignupButton().click();
 

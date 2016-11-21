@@ -3,6 +3,7 @@ package search;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import models.*;
@@ -18,7 +19,8 @@ import util.LoginUtil;
 public class DefaultSearchTest extends ApplitoolsBaseTest {
 
     @Test
-    public void DefaultSearchTest() {
+    public void DefaultSearchTest(RemoteWebDriver driver) {
+        setUp(driver);
         loginPage.login();
 
          /* confirm you are on search page */

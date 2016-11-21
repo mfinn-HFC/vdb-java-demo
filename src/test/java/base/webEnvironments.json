@@ -1,0 +1,20 @@
+
+{
+  "environments" :
+  [
+    {
+      "platform" : "Windows 10",
+      "name" : "VDB Test",
+      "version" : "54.0",
+      "browserName" : "chrome",
+      "testServer" : "http://matt-mystery:48692ec0-b0d4-4472-b0bc-8286f3c5d1ca@ondemand.saucelabs.com:80/wd/hub"
+    },
+    {
+      "platform" : "Windows 10",
+      "name" : "VDB Test",
+      "version" : "49.0",
+      "browserName" : "firefox",
+      "testServer" : "http://matt-mystery:48692ec0-b0d4-4472-b0bc-8286f3c5d1ca@ondemand.saucelabs.com:80/wd/hub"
+    }
+  ]
+}

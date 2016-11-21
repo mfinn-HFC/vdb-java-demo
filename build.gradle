@@ -1,13 +1,16 @@
 apply plugin: 'java'
 apply plugin: 'maven'
 
-repositories {
-        
-     maven { url "http://repo.maven.apache.org/maven2" }
+allprojects {
+    repositories {
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
 }
 
 dependencies {
     compile 'org.seleniumhq.selenium:selenium-java:3.0.0'
-    compile group: 'junit', name: 'junit', version:'4.11'
+    compile 'org.testng:testng:6.9.13.6'
     compile 'com.applitools:eyes-selenium-java:2.54'
+    compile 'com.github.mfinn-HFC:automation_scaffold:1.45'
 }

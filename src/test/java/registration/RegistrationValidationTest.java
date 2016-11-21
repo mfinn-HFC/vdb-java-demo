@@ -2,8 +2,12 @@ package registration;
 
 import base.ApplitoolsBaseTest;
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.SignUpPage;
+
+import java.rmi.Remote;
 
 /**
  * Created by leahgarber on 10/18/16.
@@ -11,7 +15,8 @@ import pages.SignUpPage;
 public class RegistrationValidationTest extends ApplitoolsBaseTest {
 
     @Test
-    public void RegistrationValidationTest() {
+    public void RegistrationValidationTest(RemoteWebDriver driver) {
+        setUp(driver);
         wait.until(ExpectedConditions.visibilityOf(loginPage.getSignupButton()));
         loginPage.getSignupButton().click();
 

@@ -2,6 +2,7 @@ package search;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import models.*;
@@ -11,13 +12,17 @@ import org.junit.Test;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.SignUpPage;
 import util.LoginUtil;
+
+import java.rmi.Remote;
+
 /**
  * Created by leahgarber on 10/31/16.
  */
 public class SupplierSearchTest extends ApplitoolsBaseTest {
 
     @Test
-    public void SupplierSearchTest() {
+    public void SupplierSearchTest(RemoteWebDriver driver) {
+        setUp(driver);
         /* sign in, get to the search page */
 
         /* confirm you are on search page */
